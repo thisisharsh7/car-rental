@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-import { fetchCarImagesFromAPI } from "./service/api"
-import data from './data.json';
-import CarPanel from "./CarPanel";
-import Pagination from "./Pagination";
+import { Route, Routes } from "react-router-dom"
+import Home from "./components/Home"
+import NotFound from './components/NotFound';
 
 const App = () => {
 
 
 
   return (
-    <div className="container mx-auto p-6 w-full min-h-screen text-right flex justify-center">
-      <div className="w-full flex flex-col">
-        <h1>Car Details</h1>
-        <CarPanel />
-        <Pagination />
-      </div>
+    <div className="container mx-auto md:p-6 sm:p-5 p-2 w-full min-h-screen  bg-gray-200">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/page/:pageId" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div >
 
   )
