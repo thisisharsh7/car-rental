@@ -1,23 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from '../../components/data.json';
 
 
 
 export const car = createSlice({
     name: 'car',
     initialState: {
-        carsAllDetail: data,
-        carsInPage: [],
-        pageNumber: 0
+        allCars: [],
+        allCars2: [],
+        loading: false,
+        pageNumber: 1
     },
     reducers: {
-        CARPAGE: (state, action) => {
-            return { ...state, carsInPage: action.payload };
+        SETCARS: (state, action) => {
+            return { ...state, allCars: action.payload, allCars2: action.payload, loading: false };
         },
-        CHANGEPAGE: (state, action) => {
-            return { ...state, pageNumber: action.payload }
+        SETFILTER: (state, action) => {
+            return { ...state, allCars2: action.payload, loading: false };
+        },
+        SETLOADING: (state, action) => {
+            return { ...state, loading: action.payload };
+        },
+        SETPAGE: (state, action) => {
+            return { ...state, pageNumber: action.payload, loading: false }
         }
     }
 })
-export const { CARPAGE, CHANGEPAGE } = car.actions;
+export const { SETPAGE, SETCARS, SETFILTER, SETLOADING } = car.actions;
 export default car.reducer;

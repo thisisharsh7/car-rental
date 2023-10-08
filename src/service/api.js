@@ -4,17 +4,13 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const fetchCarImagesFromAPI = async () => {
     const url = 'https://api.pexels.com/v1/search';
-    const query = 'car';
+    const query = 'luxury car';
     try {
-        const response = await fetch(`${url}?query=${query}&per_page=60`, {
+        const response = await fetch(`${url}?query=${query}&per_page=20`, {
             headers: {
                 Authorization: API_KEY,
             },
         });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
 
         const data = await response.json();
         const carImages = data.photos.map((photo) => photo.src.large);

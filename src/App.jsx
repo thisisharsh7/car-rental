@@ -5,12 +5,11 @@ import NotFound from './components/NotFound';
 const App = () => {
 
 
-
   return (
-    <div className="container mx-auto md:p-6 sm:p-5 p-2 w-full min-h-screen  bg-gray-200">
+    <div className="container mx-auto bg-gray-200">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/page/:pageId" element={<Home />} />
+        <Route path="/page/:pageParam" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div >

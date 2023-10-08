@@ -643,7 +643,7 @@
     "imgSrc": "/assets/car.jpg",
     "year": 2020,
     "seated": 4,
-    "speed_consumption": "Electric",
+    "speed_consumption": "8km / 1-litre",
     "model": "Automatic",
     "engine": "Electric",
     "rent": 650
